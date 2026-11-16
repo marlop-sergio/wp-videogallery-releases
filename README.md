@@ -1,9 +1,103 @@
-# Videoteca: versiones publicadas
+# Videoteca: plugin de WordPress para vídeos de YouTube
 
-Aquí solo se publican los ZIP instalables del plugin de WordPress **Videoteca**. El código fuente está en un repositorio privado.
+Aquí se publican los ZIP instalables de **Videoteca**. El código fuente está en un repositorio privado y las versiones se publican solas desde allí: no subas archivos aquí a mano.
 
-- **Descargar la última versión:** [Releases → Latest](https://github.com/marlop-sergio/wp-videogallery-releases/releases/latest). Descarga el archivo `wp-videogallery-X.Y.Z.zip`, no el «Source code».
-- **Instalar:** en WordPress, *Plugins → Añadir nuevo → Subir plugin* → elige el ZIP → *Instalar ahora* → *Activar*.
-- **Actualizar:** desde la versión 0.4.0, cada web avisa sola de las versiones nuevas en *Plugins* y se actualiza con el botón *Actualizar ahora*, o automáticamente si activas las actualizaciones automáticas del plugin.
+**Descargar:** [última versión](https://github.com/marlop-sergio/wp-videogallery-releases/releases/latest). Descarga el archivo `wp-videogallery-X.Y.Z.zip`, no el «Source code».
 
-Las versiones se publican de forma automática desde el repositorio privado; no subas archivos aquí a mano.
+---
+
+## Qué hace
+
+- Sincroniza los vídeos de tu canal de YouTube según un horario: más a menudo en horario laboral y nada de noche.
+- Los organiza con **etiquetas** propias, puestas a mano o con reglas automáticas.
+- Los muestra en **galerías** (feeds) con 7 visualizaciones: Carriles, Cronología, Muro mixto, Escenario, Mosaico, Vertical (Shorts) e Itinerario.
+- Una **página resumen** con el último vídeo de cada galería.
+- Los vídeos se reproducen **dentro de la web**. El reproductor de YouTube (modo `youtube-nocookie`) solo se carga al pulsar, y las miniaturas se sirven desde tu propia web.
+- Sin plugins ni librerías de terceros.
+
+## Instalar
+
+1. **Plugins → Añadir nuevo → Subir plugin** → elige el ZIP → **Instalar ahora** → **Activar**.
+2. Si ya tenías una versión anterior, WordPress pregunta qué hacer: elige **Reemplazar la actual con la subida**. Los ajustes, vídeos y galerías se conservan.
+
+**Actualizar:** desde la versión 0.4.0 no hace falta repetir esto. Cada web comprueba las versiones nuevas y las ofrece en *Plugins* con **Actualizar ahora**. Si activas *Activar actualizaciones automáticas* en la fila del plugin, se instalan solas.
+
+## Configurar (una vez por web)
+
+### 1. Clave de API de YouTube (gratis, 5 minutos)
+
+Con la cuenta de Google propietaria del canal:
+
+1. Entra en <https://console.cloud.google.com/> → selector de proyectos → **Nuevo proyecto** (por ejemplo `videoteca-web`).
+2. **APIs y servicios → Biblioteca** → `YouTube Data API v3` → **Habilitar**.
+3. **APIs y servicios → Credenciales → Crear credenciales → Clave de API**. Copia la clave, que empieza por `AIza…`.
+4. **Editar clave** → *Restricciones de API* → solo **YouTube Data API v3**. Opcionalmente, *Restricciones de aplicación* → **Direcciones IP** del servidor. Si te equivocas de IP, el plugin te dice cuál debes poner.
+
+No hace falta OAuth, ni pantalla de consentimiento, ni tarjeta de crédito.
+
+### 2. Ajustes → Videoteca
+
+1. Pega la **clave de API** y el **canal**: `@handle`, el ID `UC…` o la URL del canal.
+2. **Guardar cambios** → **Probar conexión** (al final de la página) → **Sincronizar ahora**.
+3. Opcional: ajusta la rejilla de horarios, las reglas de etiquetas y los avisos por correo.
+
+### 3. Sincronización automática
+
+WordPress sincroniza sola cuando hay visitas. Para que se cumpla el horario con exactitud, crea en el panel del hosting (*Tareas programadas / Cron jobs*) una tarea cada 15 minutos:
+
+```
+curl -s https://TU-DOMINIO/wp-cron.php?doing_wp_cron >/dev/null
+```
+
+Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-job.org que visite esa dirección cada 15 minutos.
+
+## Crear galerías
+
+1. **Videoteca → Vídeos:** pon etiquetas a los vídeos (`Tutorial`, `Webinar`, `Ibiza 2026`…). La estrella ★ marca los destacados.
+2. **Videoteca → Feeds → Añadir feed:** elige las etiquetas, el número de vídeos, el orden, el formato y la visualización (con un esquema de cada una). Al guardar, se ve una **vista previa** con tus vídeos.
+
+## Mostrarlas en la web
+
+**Con el editor de bloques:** **+** → busca **Videoteca** (una galería) o **Videoteca: resumen de galerías**.
+
+**Con shortcode** (vale para Elementor, el editor clásico, widgets…):
+
+```text
+[videoteca feed="ibiza-2026"]                              ← la galería con su vista por defecto
+[videoteca feed="ibiza-2026" vista="mosaico"]              ← la misma galería con otra vista
+[videoteca etiquetas="webinar" vista="carriles" limite="12"]  ← sin crear feed, por etiqueta
+[videoteca vista="vertical"]                               ← todos los Shorts del canal
+[videoteca feed="curso" vista="itinerario"]                ← serie con capítulos y progreso
+[videoteca_resumen]                                        ← último vídeo de cada galería
+[videoteca_resumen feeds="ibiza-2026,webinars" sin_repetir="si"]
+```
+
+| Atributo de `[videoteca]` | Valores |
+|---|---|
+| `feed` | nombre corto (slug) del feed; aparece en la caja «Cómo insertarlo» del feed |
+| `vista` | `carriles`, `cronologia`, `muro`, `escenario`, `mosaico`, `vertical`, `itinerario` |
+| `etiquetas` | lista separada por comas |
+| `limite` | 1–200 |
+| `orden` | `date_desc`, `date_asc`, `title`, `manual` |
+| `reproductor` | `auto`, `modal`, `inline` |
+
+| Atributo de `[videoteca_resumen]` | Valores |
+|---|---|
+| `feeds` | slugs separados por comas; vacío = todas |
+| `orden` | `reciente`, `alfabetico`, `lista` |
+| `nuevo` | días con la marca «Nuevo» (7 por defecto; `0` la quita) |
+| `sin_repetir` | `si` para no repetir el mismo vídeo en varias tarjetas |
+
+## Ajustar el diseño al tema
+
+Los estilos heredan la tipografía y los colores del tema. Para cambiar el color de acento, el redondeo o la separación, añade en *Apariencia → Personalizar → CSS adicional*:
+
+```css
+.wpvg { --wpvg-accent: #c8102e; --wpvg-radius: 6px; --wpvg-gap: 20px; }
+```
+
+## Si algo falla
+
+- **«Google rechaza la petición…»:** revisa las restricciones de la clave; el mensaje indica la IP que hay que autorizar.
+- **No entran vídeos nuevos:** mira *Ajustes → Videoteca → Registro* y *Herramientas → Salud del sitio*. Si la sincronización falla 3 veces seguidas, el plugin avisa por correo.
+- **Un vídeo no aparece:** en YouTube Studio debe ser público y tener activado *Permitir inserción*.
