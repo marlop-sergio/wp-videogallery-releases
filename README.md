@@ -55,6 +55,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 
 1. **Videoteca → Vídeos:** pon etiquetas a los vídeos (`Tutorial`, `Webinar`, `Ibiza 2026`…). La estrella ★ marca los destacados.
 2. **Videoteca → Feeds → Añadir feed:** elige las etiquetas, el número de vídeos, el orden, el formato y la visualización (con un esquema de cada una). Al guardar, se ve una **vista previa** con tus vídeos.
+3. **¿Ya tienes las listas organizadas en YouTube?** En el feed, pega la URL de una **lista de reproducción** de tu canal y elige *Orden: el de la lista de YouTube*. El feed muestra esa lista en su orden y cambia solo cuando la editas en YouTube Studio.
 
 ## Mostrarlas en la web
 
@@ -68,6 +69,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 [videoteca etiquetas="webinar" vista="carriles" limite="12"]  ← sin crear feed, por etiqueta
 [videoteca vista="vertical"]                               ← todos los Shorts del canal
 [videoteca feed="curso" vista="itinerario"]                ← serie con capítulos y progreso
+[videoteca lista="https://www.youtube.com/playlist?list=PL…" vista="itinerario"]  ← una lista de YouTube, en su orden
 [videoteca_resumen]                                        ← último vídeo de cada galería
 [videoteca_resumen feeds="ibiza-2026,webinars" sin_repetir="si"]
 ```
@@ -80,6 +82,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 | `limite` | 1–200 |
 | `orden` | `date_desc`, `date_asc`, `title`, `manual` |
 | `reproductor` | `auto`, `modal`, `inline` |
+| `lista` | URL o ID de una lista de reproducción de tu canal |
 
 | Atributo de `[videoteca_resumen]` | Valores |
 |---|---|
