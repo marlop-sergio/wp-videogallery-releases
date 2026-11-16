@@ -15,6 +15,14 @@ Aquí se publican los ZIP instalables de **Videoteca**. El código fuente está 
 - Los vídeos se reproducen **dentro de la web**. El reproductor de YouTube (modo `youtube-nocookie`) solo se carga al pulsar, y las miniaturas se sirven desde tu propia web.
 - Sin plugins ni librerías de terceros.
 
+## Las siete visualizaciones
+
+| | | |
+|:---:|:---:|:---:|
+| <img src="docs/vistas/carriles.svg" width="200" alt=""><br>**Carriles**<br>Una fila deslizable por etiqueta | <img src="docs/vistas/cronologia.svg" width="200" alt=""><br>**Cronología**<br>Agrupados por mes en una línea de tiempo | <img src="docs/vistas/muro.svg" width="200" alt=""><br>**Muro mixto**<br>Tarjetas con texto en columnas |
+| <img src="docs/vistas/escenario.svg" width="200" alt=""><br>**Escenario**<br>Un vídeo grande y «A continuación» | <img src="docs/vistas/mosaico.svg" width="200" alt=""><br>**Mosaico**<br>Los destacados ocupan el doble | <img src="docs/vistas/vertical.svg" width="200" alt=""><br>**Vertical**<br>Solo Shorts, en formato 9:16 |
+| <img src="docs/vistas/itinerario.svg" width="200" alt=""><br>**Itinerario**<br>Capítulos numerados con progreso | | |
+
 ## Instalar
 
 1. **Plugins → Añadir nuevo → Subir plugin** → elige el ZIP → **Instalar ahora** → **Activar**.
@@ -59,7 +67,13 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 
 ## Mostrarlas en la web
 
+**Lo más rápido:** en *Videoteca → Feeds*, la columna **En uso en** muestra dónde aparece cada galería. Si pone *Sin usar*, pulsa **Crear página**: se crea un borrador con el mismo nombre y la galería ya puesta.
+
 **Con el editor de bloques:** **+** → busca **Videoteca** (una galería) o **Videoteca: resumen de galerías**.
+
+**Con Elementor:** panel de widgets → categoría **Videoteca** → arrastra **Videoteca** o **Videoteca: resumen** y elige el feed y la vista en sus ajustes.
+
+**Con Divi:** añadir módulo → busca **Videoteca** o **Videoteca: resumen**.
 
 **Con shortcode** (vale para Elementor, el editor clásico, widgets…):
 
