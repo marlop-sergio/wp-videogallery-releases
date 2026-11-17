@@ -20,7 +20,7 @@ Aquí se publican los ZIP instalables de **Videoteca**. El código fuente está 
 | | | |
 |:---:|:---:|:---:|
 | <img src="docs/vistas/carriles.svg" width="200" alt=""><br>**Carriles**<br>Una fila deslizable por etiqueta | <img src="docs/vistas/cronologia.svg" width="200" alt=""><br>**Cronología**<br>Agrupados por mes en una línea de tiempo | <img src="docs/vistas/muro.svg" width="200" alt=""><br>**Muro mixto**<br>Tarjetas con texto en columnas |
-| <img src="docs/vistas/escenario.svg" width="200" alt=""><br>**Escenario**<br>Un vídeo grande y «A continuación» | <img src="docs/vistas/mosaico.svg" width="200" alt=""><br>**Mosaico**<br>Los destacados ocupan el doble | <img src="docs/vistas/vertical.svg" width="200" alt=""><br>**Vertical**<br>Solo Shorts, en formato 9:16 |
+| <img src="docs/vistas/escenario.svg" width="200" alt=""><br>**Escenario**<br>Un vídeo grande y «A continuación» | <img src="docs/vistas/mosaico.svg" width="200" alt=""><br>**Mosaico**<br>Portada: uno grande y los demás alrededor | <img src="docs/vistas/vertical.svg" width="200" alt=""><br>**Vertical**<br>Solo Shorts, en formato 9:16 |
 | <img src="docs/vistas/itinerario.svg" width="200" alt=""><br>**Itinerario**<br>Capítulos numerados con progreso | | |
 
 ## Instalar
