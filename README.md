@@ -107,7 +107,13 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 
 ## Ajustar el diseño al tema
 
-Los estilos heredan la tipografía y los colores del tema. Para cambiar el color de acento, el redondeo o la separación, añade en *Apariencia → Personalizar → CSS adicional*:
+Los estilos heredan la tipografía y los colores del tema. Para cambiar los colores (títulos, textos, fechas, acento, fondo de las tarjetas):
+
+- **Toda la web:** *Ajustes → Videoteca → Colores*.
+- **Elementor:** pestaña **Estilo** del widget Videoteca (incluye la tipografía de los títulos).
+- **Divi:** grupo **Colores** del módulo Videoteca.
+
+Para el redondeo o la separación, añade en *Apariencia → Personalizar → CSS adicional*:
 
 ```css
 .wpvg { --wpvg-accent: #c8102e; --wpvg-radius: 6px; --wpvg-gap: 20px; }
