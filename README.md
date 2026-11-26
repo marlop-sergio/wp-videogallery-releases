@@ -15,13 +15,13 @@ Aquí se publican los ZIP instalables de **Videoteca**. El código fuente está 
 - Los vídeos se reproducen **dentro de la web**. El reproductor de YouTube (modo `youtube-nocookie`) solo se carga al pulsar, y las miniaturas se sirven desde tu propia web.
 - Sin plugins ni librerías de terceros.
 
-## Las siete visualizaciones
+## Las ocho visualizaciones
 
 | | | |
 |:---:|:---:|:---:|
 | <img src="docs/vistas/carriles.svg" width="200" alt=""><br>**Carriles**<br>Una fila deslizable por etiqueta | <img src="docs/vistas/cronologia.svg" width="200" alt=""><br>**Cronología**<br>Agrupados por mes en una línea de tiempo | <img src="docs/vistas/muro.svg" width="200" alt=""><br>**Muro mixto**<br>Tarjetas con texto en columnas |
 | <img src="docs/vistas/escenario.svg" width="200" alt=""><br>**Escenario**<br>Un vídeo grande y «A continuación» | <img src="docs/vistas/mosaico.svg" width="200" alt=""><br>**Mosaico**<br>Portada: uno grande y los demás alrededor | <img src="docs/vistas/vertical.svg" width="200" alt=""><br>**Vertical**<br>Solo Shorts, en formato 9:16 |
-| <img src="docs/vistas/itinerario.svg" width="200" alt=""><br>**Itinerario**<br>Capítulos numerados con progreso | | |
+| <img src="docs/vistas/itinerario.svg" width="200" alt=""><br>**Itinerario**<br>Capítulos numerados con progreso | <img src="docs/vistas/lineas.svg" width="200" alt=""><br>**Líneas de tiempo**<br>Una línea horizontal por lista de YouTube | |
 
 ## Instalar
 
@@ -65,6 +65,14 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 2. **Videoteca → Feeds → Añadir feed:** elige las etiquetas, el número de vídeos, el orden, el formato y la visualización (con un esquema de cada una). Al guardar, se ve una **vista previa** con tus vídeos.
 3. **¿Ya tienes las listas organizadas en YouTube?** En el feed, pega la URL de una **lista de reproducción** de tu canal y elige *Orden: el de la lista de YouTube*. El feed muestra esa lista en su orden y cambia solo cuando la editas en YouTube Studio.
 
+## Una página índice con una línea por evento
+
+Por ejemplo, `/videos` con una línea de tiempo por evento y, al pulsar, `/videos/ibiza-2026` con todos los vídeos de ese evento:
+
+1. Crea un feed por evento con su **lista de reproducción** (vista Mosaico o Muro).
+2. Crea un feed «Vídeos» con la vista **Líneas de tiempo** y, en **Listas de reproducción por filas**, una lista por línea (`Título | URL`, o solo la URL).
+3. *Crear página* en el feed «Vídeos» y luego en cada feed de evento: las de evento se crean dentro de «Vídeos» (`/videos/ibiza-2026`), y cada línea de `/videos` enlaza a la suya.
+
 ## Mostrarlas en la web
 
 **Lo más rápido:** en *Videoteca → Feeds*, la columna **En uso en** muestra dónde aparece cada galería. Si pone *Sin usar*, pulsa **Crear página**: se crea un borrador con el mismo nombre y la galería ya puesta.
@@ -91,7 +99,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 | Atributo de `[videoteca]` | Valores |
 |---|---|
 | `feed` | nombre corto (slug) del feed; aparece en la caja «Cómo insertarlo» del feed |
-| `vista` | `carriles`, `cronologia`, `muro`, `escenario`, `mosaico`, `vertical`, `itinerario` |
+| `vista` | `carriles`, `cronologia`, `muro`, `escenario`, `mosaico`, `vertical`, `itinerario`, `lineas` |
 | `etiquetas` | lista separada por comas |
 | `limite` | 1–200 |
 | `orden` | `date_desc`, `date_asc`, `title`, `manual` |
