@@ -61,7 +61,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 
 ## Crear galerías
 
-1. **Videoteca → Vídeos:** pon etiquetas a los vídeos (`Tutorial`, `Webinar`, `Ibiza 2026`…). La estrella ★ marca los destacados.
+1. **Etiquetas:** pónselas a los vídeos en **YouTube** y elige en *Ajustes → Videoteca → Etiquetado automático* si se **importan todas** solas (con una lista de las que ignorar) o solo las que crees en *Videoteca → Etiquetas*. También puedes añadir etiquetas propias a mano en *Videoteca → Vídeos*. La estrella ★ marca los destacados.
 2. **Videoteca → Feeds → Añadir feed:** elige las etiquetas, el número de vídeos, el orden, el formato y la visualización (con un esquema de cada una). Al guardar, se ve una **vista previa** con tus vídeos.
 3. **¿Ya tienes las listas organizadas en YouTube?** En el feed, pega la URL de una **lista de reproducción** de tu canal y elige *Orden: el de la lista de YouTube*. El feed muestra esa lista en su orden y cambia solo cuando la editas en YouTube Studio.
 
