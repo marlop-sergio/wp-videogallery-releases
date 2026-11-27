@@ -117,6 +117,10 @@ Para mostrar **todo, por grupos, del más reciente al más antiguo** sin tener q
 | `nuevo` | días con la marca «Nuevo» (7 por defecto; `0` la quita) |
 | `sin_repetir` | `si` para no repetir el mismo vídeo en varias tarjetas |
 
+## La fecha de los vídeos
+
+Por defecto se usa la **fecha de grabación** de YouTube (*YouTube Studio → Detalles → Mostrar más → Fecha de grabación*) y, si no la tiene, la de publicación. Es la fecha que se muestra y con la que se ordena. Se puede cambiar en *Ajustes → Videoteca → Fecha de los vídeos*, y fijar a mano para un vídeo concreto en su ficha. Tras cambiar fechas en YouTube, pulsa **Sincronización completa**.
+
 ## Ajustar el diseño al tema
 
 Los estilos heredan la tipografía y los colores del tema. Para cambiar los colores (títulos, textos, fechas, acento, fondo de las tarjetas):
