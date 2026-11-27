@@ -106,6 +106,8 @@ Para mostrar **todo, por grupos, del más reciente al más antiguo** sin tener q
 | `limite` | 1–200 |
 | `orden` | `date_desc`, `date_asc`, `title`, `manual` |
 | `reproductor` | `auto`, `modal`, `inline` |
+| `mostrar_etiquetas` | `todas`, `propias`, `youtube`, `no` |
+| `mostrar_descripcion` | `si`, `no` |
 | `lista` | URL o ID de una lista de reproducción de tu canal |
 
 | Atributo de `[videoteca_resumen]` | Valores |
