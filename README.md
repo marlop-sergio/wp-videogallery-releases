@@ -70,7 +70,7 @@ Si el hosting no tiene tareas programadas, sirve un servicio gratuito como cron-
 Por ejemplo, `/videos` con una línea de tiempo por evento y, al pulsar, `/videos/ibiza-2026` con todos los vídeos de ese evento:
 
 1. Crea un feed por evento con su **lista de reproducción** (vista Mosaico o Muro).
-2. Crea un feed «Vídeos» con la vista **Líneas de tiempo** y, en **Listas de reproducción por filas**, una lista por línea (`Título | URL`, o solo la URL).
+2. Crea un feed «Vídeos» con la vista **Líneas de tiempo** y, en **Listas de reproducción por filas**, una lista por línea (`Título | URL`, o solo la URL). Una línea también puede ser un vídeo suelto o varios separados por comas (`Tardeo | https://youtu.be/…`).
 3. *Crear página* en el feed «Vídeos» y luego en cada feed de evento: las de evento se crean dentro de «Vídeos» (`/videos/ibiza-2026`), y cada línea de `/videos` enlaza a la suya.
 
 Para mostrar **todo, por grupos, del más reciente al más antiguo** sin tener que mantenerlo: en el feed «Vídeos» marca **Incluir todas las listas públicas del canal**, elige **Orden de las filas → La del vídeo más reciente primero** y **Orden → Más recientes primero**, y sube **Vídeos por fila** (hasta 200). Si quieres, añade la fila **«Otros vídeos»** con los que no están en ninguna lista.
